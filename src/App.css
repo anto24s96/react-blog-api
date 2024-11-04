@@ -1,0 +1,186 @@
+/* Container e Form */
+.main-container {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    padding: 15px;
+    border-radius: 10px;
+    width: 800px;
+    border: 5px solid #c4e201;
+    margin: 10px 0;
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+label,
+.tag-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.input-field,
+.select-field,
+.textarea-field {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.input-field.error {
+    border: 2px solid red;
+    outline: none;
+}
+
+/* Checkbox container */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.tag-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox {
+    transform: scale(1.5);
+    margin: 7px;
+}
+
+.publish-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.my-button {
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s;
+    padding: 5px 20px;
+    border-radius: 100px;
+    background: #cfef00;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.my-button:hover {
+    background: #c4e201;
+}
+
+.my-button svg {
+    width: 34px;
+    margin-left: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.my-button:hover svg {
+    transform: translateX(5px);
+}
+
+.my-button:active {
+    transform: scale(0.95);
+}
+
+.button-create-post {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+/* Blog List */
+.lista-dei-blog {
+    text-align: center;
+    font-style: italic;
+    text-decoration: underline;
+    margin: 30px;
+}
+
+.blog-list-container {
+    padding: 10px 150px;
+}
+
+.blog-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.blog-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    gap: 15px;
+}
+
+.title-image-container {
+    width: 450px;
+    font-size: 20px;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.blog-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 30px;
+    font-size: 20px;
+}
+
+.blog-image {
+    width: 300px;
+    border-radius: 30px;
+    margin: 10px 0;
+}
+
+.tag-block {
+    display: inline-block;
+    color: #cfef00;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.paginator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.errors-text {
+    color: #d9534f;
+    font-weight: 600;
+    margin-top: 5px;
+    font-style: italic;
+    padding: 5px;
+    border: 1px solid #d9534f;
+    border-radius: 4px;
+    background-color: #f2dede;
+}
