@@ -1,4 +1,15 @@
-export default function ({ title, image, category, content, tags, published }) {
+import { FaTrash as Trash } from "react-icons/fa";
+
+export default function ({
+    slug,
+    title,
+    image,
+    category,
+    content,
+    tags,
+    published,
+    onDelete,
+}) {
     return (
         <li className="blog-item">
             <div className="title-image-container">
@@ -22,6 +33,9 @@ export default function ({ title, image, category, content, tags, published }) {
                         : "Nessun tag"}
                 </p>
                 <p>Stato: {published ? "Pubblicato" : "Non pubblicato"}</p>
+            </div>
+            <div id="trash-icon">
+                <Trash onClick={() => onDelete(slug)} />
             </div>
         </li>
     );

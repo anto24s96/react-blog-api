@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SinglePost from "./SinglePost";
 
-export default function ({ posts }) {
+export default function ({ posts, onDelete }) {
     return (
         <div className="posts">
             {posts === null && "Caricando i post"}
@@ -11,7 +11,8 @@ export default function ({ posts }) {
                 <ul className="blog-list">
                     {posts.map((p) => (
                         <SinglePost
-                            key={p.id}
+                            key={p.slug}
+                            slug={p.slug}
                             title={p.title}
                             image={
                                 p.image
@@ -22,6 +23,7 @@ export default function ({ posts }) {
                             category={p.category.name}
                             tags={p.tags.map((t) => t.name)}
                             published={p.published}
+                            onDelete={onDelete}
                         />
                     ))}
                 </ul>

@@ -60,6 +60,19 @@ export default function () {
         }
     };
 
+    //Fetch per eliminare il singolo post
+    const deletePost = async (slug) => {
+        try {
+            const url = `${apiUrl}/posts/${slug}`;
+            await axios.delete(url);
+            setPosts((prevPost) =>
+                prevPost.filter((post) => post.slug !== slug)
+            );
+        } catch (error) {
+            console.error("Error deleting post:", error);
+        }
+    };
+
     useEffect(() => {
         fetchPosts();
         fetchCategories();
@@ -89,7 +102,7 @@ export default function () {
                 totalPages={totalPages}
                 setCurrPage={setCurrPage}
             />
-            <Posts posts={posts} />
+            <Posts posts={posts} onDelete={deletePost} />
         </>
     );
 }

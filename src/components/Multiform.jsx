@@ -94,6 +94,7 @@ export default function ({ categories, tags, onClose, reFetchPosts }) {
                 <div className="container">
                     <form onSubmit={handleSubmit}>
                         <div className="form-element">
+                            {/* title */}
                             <label htmlFor="title">Titolo Blog: </label>
                             <input
                                 type="text"
@@ -113,6 +114,7 @@ export default function ({ categories, tags, onClose, reFetchPosts }) {
                             )}
                         </div>
                         <div className="form-element">
+                            {/* image */}
                             <label htmlFor="image">URL Immagine: </label>
                             <input
                                 type="text"
@@ -132,6 +134,7 @@ export default function ({ categories, tags, onClose, reFetchPosts }) {
                             )}
                         </div>
                         <div className="form-element">
+                            {/* content */}
                             <label htmlFor="content">Descrizione: </label>
                             <textarea
                                 id="content"
@@ -150,6 +153,7 @@ export default function ({ categories, tags, onClose, reFetchPosts }) {
                             )}
                         </div>
                         <div className="form-element">
+                            {/* category */}
                             <label htmlFor="category">Categoria: </label>
                             <select
                                 name="category"
@@ -179,6 +183,7 @@ export default function ({ categories, tags, onClose, reFetchPosts }) {
 
                         <div className="checkbox-container">
                             <div className="form-element tags">
+                                {/* tags */}
                                 <label>Tags: </label>
                                 {tags.map((tag) => (
                                     <div key={tag.id} className="tag-item">
@@ -205,6 +210,7 @@ export default function ({ categories, tags, onClose, reFetchPosts }) {
                             </div>
 
                             <div className="publish-container">
+                                {/* published */}
                                 <label
                                     htmlFor="published"
                                     style={{ marginBottom: "0" }}
@@ -227,6 +233,7 @@ export default function ({ categories, tags, onClose, reFetchPosts }) {
                         </div>
 
                         <div className="button-container">
+                            {/* button submit */}
                             <button type="submit" className="my-button">
                                 <span>Aggiungi</span>
                                 <svg
