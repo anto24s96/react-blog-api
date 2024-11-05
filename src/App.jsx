@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+import Header from "./components/Header";
 import Multiform from "./components/Multiform";
 import Posts from "./components/Posts";
 import Paginator from "./components/Paginator";
@@ -81,14 +82,8 @@ export default function () {
 
     return (
         <>
-            <h1 style={{ textAlign: "center", padding: "30px" }}>
-                Cooking Blog
-            </h1>
-            <div className="button-create-post">
-                <button onClick={openForm} className="my-button">
-                    {isOpen ? "Chiudi" : "Crea"}
-                </button>
-            </div>
+            <Header onOpenForm={openForm} isOpen={isOpen} />
+
             {isOpen && (
                 <Multiform
                     categories={categories}

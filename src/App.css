@@ -1,3 +1,15 @@
+header {
+    height: 80px;
+    background-color: #b52c0a;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 150px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
 /* Container e Form */
 .main-container {
     display: flex;
@@ -9,7 +21,8 @@
     border-radius: 10px;
     width: 800px;
     border: 5px solid #c4e201;
-    margin: 10px 0;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .form-element {
@@ -102,12 +115,6 @@ label,
 
 .my-button:active {
     transform: scale(0.95);
-}
-
-.button-create-post {
-    display: flex;
-    justify-content: center;
-    margin: 15px 0;
 }
 
 /* Blog List */
