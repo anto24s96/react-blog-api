@@ -1,3 +1,5 @@
+import { FaMinus as Meno, FaPlus as Piu } from "react-icons/fa";
+
 export default function ({ currPage, totalPages, setCurrPage }) {
     return (
         <div className="paginator">
@@ -6,7 +8,7 @@ export default function ({ currPage, totalPages, setCurrPage }) {
                     onClick={() => setCurrPage((curr) => curr - 1)}
                     className="my-button"
                 >
-                    -
+                    <Meno />
                 </button>
             )}
             <span style={{ display: "inline-block" }}>
@@ -17,7 +19,7 @@ export default function ({ currPage, totalPages, setCurrPage }) {
                     onClick={() => setCurrPage((curr) => curr + 1)}
                     className="my-button"
                 >
-                    +
+                    <Piu />
                 </button>
             )}
         </div>

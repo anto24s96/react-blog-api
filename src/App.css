@@ -105,12 +105,7 @@ label,
 
 .my-button svg {
     width: 24px;
-    margin-left: 10px;
     transition: transform 0.3s ease-in-out;
-}
-
-.my-button:hover svg {
-    transform: translateX(5px);
 }
 
 .my-button:active {
@@ -188,6 +183,7 @@ label,
     border-radius: 12px;
     font-size: 0.9em;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
 }
 
 .tag-block:hover {

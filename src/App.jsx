@@ -5,6 +5,14 @@ import Header from "./components/Header";
 import Multiform from "./components/Multiform";
 import Posts from "./components/Posts";
 import Paginator from "./components/Paginator";
+
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import Button from "@mui/material/Button";
+
 const apiUrl = import.meta.env.VITE_BASE_API_URL;
 
 export default function () {
@@ -20,10 +28,33 @@ export default function () {
     const [categories, setCategories] = useState([]);
     //State per contenere i tag
     const [tags, setTags] = useState([]);
+    //State per la modale di conferma per l'eliminazione
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedPostSlug, setSelectedPostSlug] = useState(null);
 
     //Funzione per aprire il form
     const openForm = () => {
         setIsOpen(!isOpen);
+    };
+
+    // Funzione per aprire la modale di eliminazione
+    const openDeleteModal = (slug) => {
+        setSelectedPostSlug(slug);
+        setIsModalOpen(true);
+    };
+
+    // Funzione per chiudere la modale di eliminazione
+    const closeDeleteModal = () => {
+        setIsModalOpen(false);
+        setSelectedPostSlug(null);
+    };
+
+    // Funzione per confermare l'eliminazione
+    const confirmDeletePost = async () => {
+        if (selectedPostSlug) {
+            await deletePost(selectedPostSlug);
+            closeDeleteModal();
+        }
     };
 
     //Fetch per recuperare i post
@@ -97,7 +128,26 @@ export default function () {
                 totalPages={totalPages}
                 setCurrPage={setCurrPage}
             />
-            <Posts posts={posts} onDelete={deletePost} />
+            <Posts posts={posts} onDelete={openDeleteModal} />
+
+            {/* Modale di conferma eliminazione */}
+            <Dialog open={isModalOpen} onClose={closeDeleteModal}>
+                <DialogTitle>{"Conferma Eliminazione"}</DialogTitle>
+                <DialogContent>
+                    <DialogContentText>
+                        Sei sicuro di voler eliminare questo post? Questa azione
+                        non può essere annullata.
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={closeDeleteModal} color="primary">
+                        Annulla
+                    </Button>
+                    <Button onClick={confirmDeletePost} color="error">
+                        Elimina
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </>
     );
 }
